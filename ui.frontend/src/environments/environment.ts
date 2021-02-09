@@ -15,7 +15,7 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 export const environment = {
   appRoot:
-    "/content/universia/es/es/home.html", // tslint:disable-line
+    "/content/universia/${languageCountry.split('_').get(1)}/${languageCountry.split('_').get(0)}/home.html", // tslint:disable-line
   production: false,
   publicUrl:
     '/etc.clientlibs/universia/clientlibs/clientlib-angular/resources'

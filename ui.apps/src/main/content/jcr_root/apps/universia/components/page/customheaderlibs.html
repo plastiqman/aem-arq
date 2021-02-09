@@ -13,8 +13,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
-     data-sly-call="${clientlib.css @ categories='universia.base'}"/>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='universia.base'}">
+</sly>
+
+<!--/* Angular Base Path */-->
+<base href="/etc.clientlibs/universia/clientlibs/clientlib-angular/resources/base" />
 <!--/*
     SPA-specific meta tags
 */-->

@@ -17,6 +17,6 @@
 import {
   AEMContainerComponent,
   MapTo
-} from '@adobe/cq-angular-editable-components';
+} from '@adobe/aem-angular-editable-components';
 
 MapTo('universia/components/spa')(AEMContainerComponent);

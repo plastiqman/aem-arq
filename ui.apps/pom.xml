@@ -23,7 +23,7 @@
     <parent>
         <groupId>universia</groupId>
         <artifactId>universia</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -47,53 +47,18 @@
             <plugin>
                 <groupId>org.apache.jackrabbit</groupId>
                 <artifactId>filevault-package-maven-plugin</artifactId>
-                <extensions>true</extensions>
                 <configuration>
                     <group>universia</group>
                     <name>universia.ui.apps</name>
                     <packageType>application</packageType>
                     <accessControlHandling>merge</accessControlHandling>
-                    <properties>
-                        <cloudManagerTarget>none</cloudManagerTarget>
-                    </properties>
                     <repositoryStructurePackages>
                         <repositoryStructurePackage>
                             <groupId>universia</groupId>
                             <artifactId>universia.ui.apps.structure</artifactId>
                         </repositoryStructurePackage>
                     </repositoryStructurePackages>
-                    <embeddeds>
-                        <embedded>
-                            <groupId>com.adobe.cq</groupId>
-                            <artifactId>core.wcm.components.core</artifactId>
-                            <target>/apps/universia/install</target>
-                        </embedded>
-                        <embedded>
-                            <groupId>universia</groupId>
-                            <artifactId>universia.core</artifactId>
-                            <target>/apps/universia/install</target>
-                        </embedded>
-                        <embedded>
-                            <groupId>com.adobe.aem</groupId>
-                            <artifactId>spa.project.core.core</artifactId>
-                            <target>/apps/universia/install</target>
-                        </embedded>
-                    </embeddeds>
-                    <subPackages>
-                        <subPackage>
-                            <groupId>com.adobe.aem</groupId>
-                            <artifactId>spa.project.core.all</artifactId>
-                        </subPackage>
-                    </subPackages>
                     <dependencies>
-                        <dependency>
-                            <groupId>com.adobe.cq</groupId>
-                            <artifactId>core.wcm.components.content</artifactId>
-                        </dependency>
-                        <dependency>
-                            <groupId>com.adobe.cq</groupId>
-                            <artifactId>core.wcm.components.config</artifactId>
-                        </dependency>
                     </dependencies>
                 </configuration>
             </plugin>
@@ -153,19 +118,13 @@
         <!-- SPA Project Core (includes hierarchy page) -->
         <dependency>
             <groupId>com.adobe.aem</groupId>
-            <artifactId>spa.project.core.all</artifactId>
+            <artifactId>spa.project.core.ui.apps</artifactId>
             <type>zip</type>
         </dependency>
         <dependency>
             <groupId>com.adobe.aem</groupId>
             <artifactId>spa.project.core.core</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>com.adobe.cq</groupId>
-            <artifactId>core.wcm.components.core</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>universia</groupId>
             <artifactId>universia.ui.apps.structure</artifactId>
@@ -174,36 +133,10 @@
         </dependency>
 
         <dependency>
-            <groupId>com.adobe.cq</groupId>
-            <artifactId>core.wcm.components.content</artifactId>
-            <type>zip</type>
-        </dependency>
-
-        <dependency>
-            <groupId>com.adobe.cq</groupId>
-            <artifactId>core.wcm.components.config</artifactId>
-            <type>zip</type>
-        </dependency>
-        <dependency>
             <groupId>com.adobe.aem</groupId>
-            <artifactId>uber-jar</artifactId>
-            <classifier>apis</classifier>
+            <artifactId>aem-sdk-api</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>javax.jcr</groupId>
-            <artifactId>jcr</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.day.cq.wcm</groupId>
-            <artifactId>cq-wcm-taglib</artifactId>
-        </dependency>
         <!-- HTL dependencies needed for the HTL Maven Plugin source code generation -->
         <dependency>
             <groupId>org.apache.sling</groupId>
